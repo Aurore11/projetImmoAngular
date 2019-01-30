@@ -1,0 +1,309 @@
+
+> pour faire de l'angular => CLI (Command Line Interface)
+			     > la CLI permet de cr�er un projet, ajouter des composants, builder le projet, tests...
+			     > la commande principale: ng
+
+> installation de la CLI et angular: npm install -g @angular/cli
+
+> cr�ation d'une application angular: ng new nomProjet
+
+> structure d'une application angular: > dossier e2e : fichiers relatifs aux tests end-to-end (tests fonctionnels)
+				       > dossier node_modules : tous les packages des d�pendances du projets (biblioth�ques angular)
+				       > dossier src : les sources de l'application (modules, composants, services...)
+				       			> dossier app : 
+								> app.component.ts : classe typescript = classe d'un composant angular
+								> app.component.html : template html repr�sentant une vue html
+										       d�crit � angular comment doit �tre rendu le composant 												associ�
+								> app.component.css : feuille de style associ� au composant
+								> app.module.ts : le premier et le principal module de l'application (classe 																         typescript AppModule)
+										  Avant d�coupage en modules: app.module.ts contient 														l'int�gralit� de l'application
+										  Apr�s d�coupage en modules: app.module.ts importe les modules 														fournis par angular
+										  > AppModule r�f�rence les composant AppComponent 												       (app.component.ts) comme composant racine 													avec la prop bootstrap
+							
+							> main.ts et index.html: points d'entr�e � notre application
+
+
+> R�sum�: 1. Angular CLI cr�e AppModule (app.module.ts) qui est r�f�renc� dans le fichier main.ts en tant que point d'entr�e � l'application
+	  2. le module principal AppModule r�f�rence ensuite le composant AppComponent (app.component.ts) comme composant racine de l'application 		(propri�t� bootstrap) 
+
+
+----------------------------------------------------------------------------------------------------------
+Les composants:
+----------------------------------------------------------------------------------------------------------
+
+> �l�ment de base d'une appli angular
+> classe ts (propri�t�s/m�thodes) exposant une vue et d�finnissant la mani�re dont le user interragit avec cette vue
+> objectif: r�utilisation et d�coupage logique
+> nommage: my-component.ts
+	   produit.component.ts
+   	   liste-produit.component.ts
+
+> cr�ation d'un composant avec la cli: ng generate component <nom_composant>  | ng g c <nom_composant>
+
+> utilisation du composant dans l'appli:
+	> le composant appartient � un module. C'est sur le module qu'on doit d�clarer le composant
+	1. le d�clarer dans le module appropri� (ex: module principal)
+	2. injection du composant � un endroit (doc html) avec son s�lecteur
+
+
+
+----------------------------------------------------------------------------------------------------------
+DataBinding (liaison des donn�es entre les composants et la vue):
+----------------------------------------------------------------------------------------------------------
+
+> l'appli angular g�re ce que le user voit et peut faire, grace � l'interaction d'une instance de la classe du composant (ts) et la template (html) en utilisant des donn�es (modele)
+
+> DP MVVM (equivalent MVC): permet de s�parer la vue de la logique et de l'acc�s aux donn�es avec le data binding
+	> MVVM: -le composant (ts) - controller / viewModel
+		-la template (html) - vue
+		-les donn�es - modele
+
+> types de liaison (binding) dans angular:
+	1. interpolation {{exp}}: liaison du composant vers la vue
+	2. liaison de propri�t� (property binding) [property_html]: liason composant -> vue
+	3. liaison d'�v�nement (event binding): liaison vue -> composant
+	4. liaison bidirectionnelle (two way data binding): liaison vue <-> composant
+
+
+----------------------------------------------------------------------------------------------------------
+Les directives
+----------------------------------------------------------------------------------------------------------
+
+> �l�ment du framework angular qui va int�ragir avec le Dom (arborescence) de notre page HTML
+
+> permet d'associer � un �l�ment HTML un comportement javascript
+
+> types de directives:
+	1. les directives structurelles: modifie la structure du document
+		> ngFor (equi. du for each)
+		> ngIf: supprimer ou recr�er l'�l�ment courant suivant l'expression (false/true)
+	2. les directives d'attribut: pas de modif de la structure. Modif de style
+		> une directive est une classe avec le d�corateur @Directive
+		> cr�ation: une commande CLI = ng gdirective <nom_directive>
+			ng g directive directives/bordure
+		> utilisation de la directive: il faut injecter dans le constructeur de la classe: 
+							- la ref�rence � l'�l�ment sur lequel la directive est appliqu�e
+							- un renderer qui permet d'effectuer des op�rations sur cet �l�ment
+	3. les directives composants: composant angular
+
+
+
+----------------------------------------------------------------------------------------------------------
+Les pipes
+----------------------------------------------------------------------------------------------------------
+> un pipe est un �l�ment du framework permettant d'effectuer des transformations de donn�es dans la template
+
+> utile pour mettre en forme une date ou un nombre...
+> utile pour effectuer des filtres 
+
+> utilisation d'un pipe:
+	syntaxe de base:
+		{{ expression | nom_pipe }}
+	avec param�tres:
+		{{ expression | nom_pipe : param1 : param2 :...}}
+
+> pipes pr�d�finis:
+	- lowercase: transformer un texte en minuscules {{ expression | lowercase}}
+	- uppercase: transformer un texte en majuscules {{ expression | uppercase}}
+	- date: formate une valeur de date en fonction des r�gles de la locale {{ expression | date :format: timezone : locale}}
+	- currency: transforme un texte en une chaine de devise {{ expression | currency: param1:param2param3 }}
+					- param1: devise du formattage 'USD' 
+					- param2: 'symbol' / 'code' =$ ou �  /'USD' ou EUR
+					- param3: nombre de chiffres avant les d�cimales (par d�faut 1)/nombre de chiffres min apr�s les 							          d�cimales (zero par d�faut)/nombre de chiffres max apr�s les d�cimales (3 par d�faut)
+						  [ex: 1.2-2]
+	- json: transformer une valeur dans sa pr�sentation au format json
+
+> cr�er un pipe personnel: 
+	- cr�ation avec une commande de la CLI: ng generate pipe <nom_pipe>
+
+
+----------------------------------------------------------------------------------------------------------
+Les formulaires
+----------------------------------------------------------------------------------------------------------
+
+> 2 approches pour la gestion des formulaires dans angular
+		- formulaire pilot� par la template (Template Driven Forms): le gros du travail est effectu� dans la template
+		- formulaire pilot� par le mod�le (Model Driven Forms): le gros du travail est effectu� par le composant
+> Ces 2 �l�ments appartiennent � la biblioth�que  '@angular/forms'
+
+> Les formulaires angular fonctionnent avec 2 types de composants:
+	- FormControls (contr�les)
+	- FormGroups (groupe de contr�le)
+
+
+----------------------------------------------------------------------------------------------------------
+Les services
+----------------------------------------------------------------------------------------------------------
+
+> un service angular est utilis�  lorsque vous avez besoin de r�utiliser des donn�es ou une logique sur plusieurs composants
+
+> objectif : contenir toute la logique fonctionnelle et/ou technique de l'application 
+
+> d�claration d'un service perso avec la CLI: ng generate service <nom_service>
+	> un service est une classe typescript
+	> les m�thodes publiques seront expos�es et utilisables par les autres �l�ments de l'application
+
+> utilisation du service:
+	> d�claration du service comme provider (fournisseur): soit au niveau du composant ou soit au niveau du module
+		principal (a parti de la version 6: la metadonn�e providedIn du service)
+	> injection du service pour l'utiliser
+
+
+
+----------------------------------------------------------------------------------------------------------
+Le routing angular
+----------------------------------------------------------------------------------------------------------
+
+> Le routing permet la navigation d'une vue � une autre
+
+> Impl�mentation du routing: la biblioth�que de routage angular 'Angular Router' packag�e dans @angular/router
+
+> g�n�ration du rootage de l'appli: 
+	> soit � la cr�ation du projet  (Yes /ou/ ng new angular08Routing --routing)
+	> soit avec la CLI : npm @angular/router
+	
+	> le module de routage de l'appli est le fichier app-routing.module.ts
+
+> configuration du routage dans app-routing.module.ts:
+	> ajout de la d�claration du module de la classe routage dans le module principal
+
+	> d�finir les routes de l'appli (chemins de navigation)
+		- route: un composant associ� � une url (url demand�e -> le rendu du composant)
+		- utilisation d'une constante de types 'Routes' avec une propri�t� path (URL) et une propri�t� component (Composant) pour 
+			d�finir les chemins de navigation
+		- importation du routeur (RouterModule) pour le rendu des composants
+		- balise <routeur-outlet>: pr�ciser au module de routage o� il doit faire le rendu des composants associ�s aux routes
+
+	> r�cup�rer les donn�es du routage (params du routage):
+		- pour obtenir les informations concernant la route active au sein du composant, on doit injecter une classe ActivatedRoute
+			ActivatedRoute: encapsule les infos sur la route associ�e � un composant
+
+	> params de routage
+		- obligatoire: /search/:term
+		- optionnel: /search;term=Celine
+	
+	> params de requ�te (facultatifs)
+		- /search?term=Celine
+
+	> naviguer dans l'application:
+		1. navigation imp�rative (programmatiquement : code typescript dans le composant): 
+			> 2 m�thodes dans le rooteur:
+					- navigate()
+					- navigateByUrl()
+		
+		2. navigation d�clarative (c�t� template html):
+			> directive RouterLink de la classe = Router
+			> NB: directive RouterLinkActive: sp�cifier la classe css lors de l'activation de la route
+
+
+----------------------------------------------------------------------------------------------------------
+Ajout de bootstrap � l'appli
+----------------------------------------------------------------------------------------------------------
+
+> CLI: npm install bootstrap@3 jquery --save
+
+> ajout de r�f�rence dans le fichier package.json
+
+> d�claration dans le fichier de config angular.json
+
+----------------------------------------------------------------------------------------------------------
+Les requ�tes HTTP
+----------------------------------------------------------------------------------------------------------
+
+> comment le client (navigateur) communique avec le serveur dans une app angular et comment envoyer, r�cup�rer et traiter des donn�es
+venant d'un serveur via le protocole HTTP
+
+> Le service s'appelle HttpClient: communication avec le serveur via des requ�tes
+
+> m�canisme http dan sangular avec le module HtppClient (ex: recup d'une liste d'employ�s):
+	1. Envoi d'une requete HTTP GET
+	2. R�ception de l'objet observable et sa conversion en tableau d'employ�s
+	3. abonnement � l'observalbe des composants
+	4. assignation du tableau � une variable pour un affichage
+	
+	> biblioth�que RxJs (Reactive Extensions for javascript): permet de travailler avec les observables
+
+> Notre exemple: mise en place du module HttpClient
+	1. envoi d'une requ�te http � partir du service EmployeService	
+			> import du module: HttpClientModule dans AppModule (module principal de l'appli) et ajout dans la liste des imports
+			
+			NB: le service HttpClient est int�gr� dans HttpClientModule
+			
+			> dans le service employe: import et injection du service HttpClient
+
+			> utilisation de la m�thode get() pour envoyer une requ�te Http GET vers le ws REST
+			
+			NB: la r�ponse de la m�thode get() est un type observable qui doit �tre cast� en un tableau
+
+	2. convertir l'objet observable re�u en r�ponse et le convertir en tableau d'employ�s
+
+	3. 3.1 afin de consommer cette Observable, les composants listeEmployes et detailsEmploye vont s'abonner � elle pour r�cup�rer les 		donn�es
+	   3.2 les donn�es seront affect�es � une variable locale pour les rendre disponible � la vue
+
+
+
+----------------------------------------------------------------------------------------------------------
+CRUD Angular
+----------------------------------------------------------------------------------------------------------
+
+> Fausse api REST en ligne: utilisation du serveur json -> https://github.com/typicode/json-server
+
+	> installation du serveur json: npm install -g json-server
+	> d�marrage du serveur: json-server --watch db.json
+		- port: 3000
+	> les donn�es des ressources du serveur sont stock�s dans le fichier: db.json
+
+> version bootstrap pour angular: ngx-bootstrap
+	> installation dans le projet: npm install ngx-bootstrap --save
+	> declaration du module BsDatePickerModule dans le module principal du projet appModule
+	> declaration dans le fichier angular.json
+
+> URL de la requete du delete: http://localhost:3000/employes/1
+delete() de httpClient retourne un void
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+__________________________________________________________________________________________________________________________________________
+				
+          ------------	      |            |        ------------         ------------         ------------         ------------       
+	 |	      |       |            |       |            |       |            |       |            |       |
+	 |	      |       |            |	   |            |       |            |       |            |       |
+	 |	      |       |            |       |            |       |            |       |            |       |
+	 |------------|       |            |	   |------------|       |            |       |------------|       |------
+	 |	      |       |            |       |       |            |            |       |       |            |
+	 |            |	      |            |       |         |          |            |       |          |         |
+	 |	      |	       ------------        |            |        ------------        |            |        -------------
+         
+____________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

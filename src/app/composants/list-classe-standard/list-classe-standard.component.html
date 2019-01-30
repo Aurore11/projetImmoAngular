@@ -1,0 +1,40 @@
+<!--===============Gestion des classes standard================= -->
+
+<table *ngFor = "let classeStd of classesStandards">
+    <tr>
+      <td>Id</td>
+      <td>{{classeStd.id}}</td>
+    </tr>
+    <tr>
+      <td>Code</td>
+      <td>{{classeStd.code}}</td>
+    </tr>
+    <tr>
+      <td>Type</td>
+      <td>{{classeStd.type}}</td>
+    </tr>
+    <tr>
+      <td>Mode offre</td>
+      <td>{{classeStd.modeOffre}}</td>
+    </tr>
+    <tr>
+      <td>Prix max</td>
+      <td>{{classeStd.prixMax}}</td>
+    </tr>
+    <tr>
+      <td>Superficie minimum</td>
+      <td>{{classeStd.superficieMin}}</td>
+    </tr>
+    <tr>
+      <td><button class="btn btn-primary" (click) ="getAllBiensImmo()">Biens Immobilier</button></td>
+    </tr>
+    <tr>
+      <td><button class="btn btn-primary" (click) ="editClasseStd(classeStd.id)">Editer</button></td>
+    </tr>
+    <tr>
+      <td><button class="btn btn-danger" (click) ="suppClasseStd(classeStd)">Supprimer</button></td>
+    </tr>
+  
+  
+  
+  </table>

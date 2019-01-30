@@ -1,0 +1,56 @@
+<form #proprioForm="ngForm" (ngSubmit)="saveProprio()">
+
+
+  <div class="panel panel-primary">
+
+    <!-- header du panel -->
+    <div class="panel-heading">
+      <h3>Formulaire d'ajout/édition</h3>
+    </div>
+    <!--end panel header -->
+
+    <!-- body du panel -->
+    <div class="panel-body">
+      <!-- nom du proprio -->
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input id="name" type="text" class="form-control" name="nom" [(ngModel)]="proprietaire.nom" />
+      </div>
+      <!-- end nom -->
+
+      <!-- adresse du proprio -->
+      <div class="form-group">
+        <label for="adresse">Adresse</label>
+        <input id="adresse" type="text" class="form-control" name="adress" [(ngModel)]="proprietaire.adresse" />
+      </div>
+      <!-- end adresse -->
+
+      <!-- tel perso du proprio -->
+      <div class="form-group">
+        <label for="telPerso">Tel perso</label>
+        <input id="telPerso" type="text" class="form-control" name="telPersonal" [(ngModel)]="proprietaire.tel_perso" />
+      </div>
+      <!-- end tel perso -->
+
+      <!-- tel travail du proprio -->
+      <div class="form-group">
+        <label for="telTravail">Tel travail</label>
+        <input id="telTravail" type="text" class="form-control" name="telWork" [(ngModel)]="proprietaire.tel_travail" />
+      </div>
+      <!-- end tel travail -->
+
+
+    </div>
+    <!--end panel body -->
+
+    <div class="panel-footer">
+      <button class="btn btn-danger" type="submit">Save</button>
+    </div>
+    <!--end panel footer -->
+
+
+  </div>
+  <!--end panel -->
+
+
+</form>
