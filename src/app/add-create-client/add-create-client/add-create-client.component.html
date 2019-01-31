@@ -1,0 +1,61 @@
+<form #classeStdForm="ngForm" (ngSubmit)="saveClient()">
+
+
+  <div class="panel panel-primary">
+
+    <!-- header du panel -->
+    <div class="panel-heading">
+      <h3>Formulaire d'ajout/édition</h3>
+    </div>
+    <!--end panel header -->
+
+    <!-- body du panel -->
+    <div class="panel-body">
+      <!-- Id -->
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input id="id" type="text" class="form-control" name="id" [(ngModel)]="client.id" />
+      </div>
+      <!-- end Id -->
+
+
+       <!-- adresse -->
+       <div class="form-group">
+        <label for="adresse">Adresse</label>
+        <input id="adresse" type="text" class="form-control" name="adresse" [(ngModel)]="client.adresse" />
+      </div>
+      <!-- end adresse -->
+
+    <!-- Nom -->
+ 
+      <div class="form-group">
+        <label for="nom">Nom</label>
+        <input id="nom" type="text" class="form-control" name="nom" [(ngModel)]="client.nom" />
+      </div>
+      <!-- end nom -->
+
+       <!-- Nom -->
+ 
+       <div class="form-group">
+        <label for="nom">Telephone</label>
+        <input id="telephone" type="text" class="form-control" name="telephone" [(ngModel)]="client.telephone" />
+      </div>
+      <!-- end nom -->
+
+     
+
+
+    </div>
+    <!--end panel body -->
+
+    <div class="panel-footer">
+      <button class="btn btn-danger" type="submit">Save</button>
+    </div>
+    <!--end panel footer -->
+
+
+  </div>
+  <!--end panel -->
+
+
+</form>

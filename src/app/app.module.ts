@@ -14,6 +14,8 @@ import { ListProprietaireComponent } from './composants/list-proprietaire/list-p
 import { AddCreateComponent } from './composants/add-create/add-create.component';
 import { ListClasseStandardComponent } from './composants/list-classe-standard/list-classe-standard.component';
 import { AddCreateClasseStdComponent } from './composants/add-create-classe-std/add-create-classe-std.component';
+import { ListClientsComponent } from './composants/list-clients/list-clients.component';
+import { AddCreateClientComponent } from './add-create-client/add-create-client/add-create-client.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { AddCreateClasseStdComponent } from './composants/add-create-classe-std/
     ListProprietaireComponent,
     AddCreateComponent,
     ListClasseStandardComponent,
-    AddCreateClasseStdComponent
+    AddCreateClasseStdComponent,
+    ListClientsComponent,
+    AddCreateClientComponent
   ],
   imports: [
     BrowserModule,
