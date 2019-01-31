@@ -1,0 +1,30 @@
+<!--===============Gestion des contrats================= -->
+
+<table *ngFor="let contrat of contrats">
+  <tr>
+    <td>Reference</td>
+    <td>{{contrat.refContrat}}</td>
+  </tr>
+  <tr>
+    <td>Client</td>
+    <td>{{contrat.client}}</td>
+  </tr>
+  <tr>
+    <td>Bien immobilier</td>
+    <td>{{contrat.bienImmo}}</td>
+  </tr>
+  <tr>
+    <td>Agent</td>
+    <td>{{contrat.agent}}</td>
+  </tr>
+
+  <tr>
+    <td><button class="btn btn-primary" (click)="editContrat(contrat.refContrat)">Editer</button></td>
+  </tr>
+  <tr>
+    <td><button class="btn btn-danger" (click)="suppContrat(contrat)">Supprimer</button></td>
+  </tr>
+
+
+
+</table>

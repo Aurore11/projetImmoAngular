@@ -14,8 +14,15 @@ import { ListProprietaireComponent } from './composants/list-proprietaire/list-p
 import { AddCreateComponent } from './composants/add-create/add-create.component';
 import { ListClasseStandardComponent } from './composants/list-classe-standard/list-classe-standard.component';
 import { AddCreateClasseStdComponent } from './composants/add-create-classe-std/add-create-classe-std.component';
+<<<<<<< HEAD
 import { ListClientsComponent } from './composants/list-clients/list-clients.component';
 import { AddCreateClientComponent } from './add-create-client/add-create-client/add-create-client.component';
+=======
+import { ListVisiteComponent } from './composants/list-visite/list-visite.component';
+import { AddCreateVisiteComponent } from './composants/add-create-visite/add-create-visite.component';
+import { ListContratComponent } from './composants/list-contrat/list-contrat.component';
+import { AddCreateContratComponent } from './composants/add-create-contrat/add-create-contrat.component';
+>>>>>>> 298d3248d8b47df8a933074ad5f37a2cca871c1e
 
 @NgModule({
   declarations: [
@@ -25,8 +32,15 @@ import { AddCreateClientComponent } from './add-create-client/add-create-client/
     AddCreateComponent,
     ListClasseStandardComponent,
     AddCreateClasseStdComponent,
+<<<<<<< HEAD
     ListClientsComponent,
     AddCreateClientComponent
+=======
+    ListVisiteComponent,
+    AddCreateVisiteComponent,
+    ListContratComponent,
+    AddCreateContratComponent
+>>>>>>> 298d3248d8b47df8a933074ad5f37a2cca871c1e
   ],
   imports: [
     BrowserModule,

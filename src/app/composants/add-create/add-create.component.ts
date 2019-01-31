@@ -36,8 +36,8 @@ export class AddCreateComponent implements OnInit {
         id : null,
         nom : null,
         adresse :null,
-        tel_perso :null,
-        tel_travail :null
+        telephonePrive :null,
+        telephoneTravail :null
       }
     }else{
       //edition du propriétaire
@@ -63,6 +63,9 @@ export class AddCreateComponent implements OnInit {
       //edition du proprietaire
       this.proprioService.updateProprio(this.proprietaire).subscribe();
     }
+
+    //redirection vers la liste des proprios
+    this.router.navigate(['list']);
 
   }//end saveProprio
 

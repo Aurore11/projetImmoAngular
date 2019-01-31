@@ -30,7 +30,8 @@ export class ModeleFormulaireComponent implements OnInit {
    */
   seConnecter(){
     console.log("Tentative de connexion ")
-    this.agentService.tryConnection();
+    //this.agentService.tryConnection();
+    this.router.navigate(['/list']);
   }
 
 
