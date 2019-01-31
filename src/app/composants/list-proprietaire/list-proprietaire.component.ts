@@ -34,7 +34,17 @@ export class ListProprietaireComponent implements OnInit {
   suppProprio(proprio:Proprietaire){
     this.proprioService.supprimerProprio(proprio).subscribe(
 
-        //on peut mettre un filtrage si on veut
+      () =>{
+
+        //Filtrage du tableau proprietaires
+        /**
+         * la méthode filter() crée et retourne un nouveau tableau contenant tous les éléments du tableau d'origine
+         * qui remplisssent une condition déterminée par la fonction callback (l'expression lambda)
+         */
+        this.proprietaires =this.proprietaires.filter(prop => prop !== proprio)
+
+      }
+
 
     );
   }

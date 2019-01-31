@@ -64,6 +64,9 @@ export class AddCreateComponent implements OnInit {
       this.proprioService.updateProprio(this.proprietaire).subscribe();
     }
 
+    //redirection vers la liste des proprios
+    this.router.navigate(['list']);
+
   }//end saveProprio
 
 

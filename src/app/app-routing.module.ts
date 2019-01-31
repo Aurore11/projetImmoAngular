@@ -7,8 +7,10 @@ import { ModeleFormulaireComponent } from './modeleFomulaire/modele-formulaire.c
 
 const routes: Routes = [
   {path:'list', component: ListProprietaireComponent},
+  {path:'formul', component: ModeleFormulaireComponent},
   {path:'editProprio/:id', component: AddCreateComponent},
-  {path:'editClasseStd/:id', component: AddCreateClasseStdComponent}
+  {path:'editClasseStd/:id', component: AddCreateClasseStdComponent},
+  {path:'', redirectTo:'/formul', pathMatch:'full'}
 ];
 
 @NgModule({

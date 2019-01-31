@@ -1,33 +1,26 @@
 <!--===============Gestion des propriétaires de biens immobiliers================= -->
 
-<table class="table table-bordered" *ngFor="let proprio of proprietaires">
-  <tr>
-    <td>Id</td>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Teléphone privé</th>
+      <th scope="col">Teléphone travail</th>
+      <th scope="col">Edition</th>
+      <th scope="col">Supression</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let proprio of proprietaires">
     <td>{{proprio.id}}</td>
-  </tr>
-  <tr>
-    <td>Nom</td>
     <td>{{proprio.nom}}</td>
-  </tr>
-  <tr>
-    <td>Adresse</td>
     <td>{{proprio.adresse}}</td>
-  </tr>
-  <tr>
-    <td>Téléphone personnel</td>
     <td>{{proprio.telephonePrive}}</td>
-  </tr>
-  <tr>
-    <td>Téléphone travail</td>
     <td>{{proprio.telephoneTravail}}</td>
-  </tr>
-  <tr>
     <td><button class="btn btn-primary" (click)="editProprio(proprio.id)">Editer</button></td>
-  </tr>
-  <tr>
     <td><button class="btn btn-danger" (click)="suppProprio(proprio)">Supprimer</button></td>
-  </tr>
-
+  </tbody>
 
 
 </table>
