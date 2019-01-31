@@ -1,0 +1,29 @@
+<!--===============Gestion des visites================= -->
+
+<table *ngFor="let visite of visites">
+  <tr>
+    <td>Id</td>
+    <td>{{visite.id}}</td>
+  </tr>
+  <tr>
+    <td>Date de la visite</td>
+    <td>{{visite.date_visite}}</td>
+  </tr>
+  <tr>
+    <td>Horaire de la visite</td>
+    <td>{{visite.horaire_visite}}</td>
+  </tr>
+  <tr>
+    <td>Agent immobilier</td>
+    <td>{{visite.agent}}</td>
+  </tr>
+  <tr>
+    <td><button class="btn btn-primary" (click)="editVisite(visite.id)">Editer</button></td>
+  </tr>
+  <tr>
+    <td><button class="btn btn-danger" (click)="suppVisite(visite)">Supprimer</button></td>
+  </tr>
+
+
+
+</table>

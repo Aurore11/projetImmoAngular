@@ -1,0 +1,64 @@
+<form #contratForm="ngForm" (ngSubmit)="saveContrat()">
+
+
+  <div class="panel panel-primary">
+
+    <!-- header du panel -->
+    <div class="panel-heading">
+      <h3>Formulaire d'ajout/édition</h3>
+    </div>
+    <!--end panel header -->
+
+    <!-- body du panel -->
+    <div class="panel-body">
+      <!-- code -->
+      <div class="form-group">
+        <label for="refContrat">Reference contrat</label>
+        <input id="contrat" type="text" class="form-control" name="contrat" [(ngModel)]="contrat.refContrat" />
+      </div>
+      <!-- end code -->
+
+      <!-- mode offre -->
+      <!-- radio bouton pour le mode d'offre -->
+      <div class="form-group">
+        <label>Mode d'offre</label>
+        <div>
+          <label class="radio-inline">
+            <input type="radio" value="ALouer" name="mode" [(ngModel)]="classeStd.modeOffre" /> A acheter
+          </label>
+          <label class="radio-inline">
+            <input type="radio" value="AVendre" name="mode" [(ngModel)]="classeStd.modeOffre" /> A louer
+          </label>
+        </div>
+        <!-- end div choix -->
+      </div><!-- end mode offre -->
+
+      <!-- prix max -->
+      <div class="form-group">
+        <label for="prixMax">Prix maximum</label>
+        <input id="prixMax" type="text" class="form-control" name="prixMaxi" [(ngModel)]="classeStd.prixMax" />
+      </div>
+      <!-- end prix max -->
+
+      <!-- superficie min -->
+      <div class="form-group">
+        <label for="superficieMin">Superficie minimum</label>
+        <input id="superficieMin" type="text" class="form-control" name="superficieMini" [(ngModel)]="classeStd.superficieMin" />
+      </div>
+      <!-- end superficie min -->
+
+
+    </div>
+    <!--end panel body -->
+
+    <div class="panel-footer">
+      <button class="btn btn-danger" type="submit">Save</button>
+    </div>
+    <!--end panel footer -->
+
+
+  </div>
+  <!--end panel -->
+
+
+</form>

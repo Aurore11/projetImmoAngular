@@ -23,7 +23,9 @@ export class ListProprietaireComponent implements OnInit {
   ngOnInit() {
     this.proprioService.getAllProprio().subscribe(
       data => this.proprietaires = data
+      
     );
+    
   }
 
 

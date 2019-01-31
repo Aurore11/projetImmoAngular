@@ -1,0 +1,56 @@
+<form #visiteForm="ngForm" (ngSubmit)="saveVisite()">
+
+
+  <div class="panel panel-primary">
+
+    <!-- header du panel -->
+    <div class="panel-heading">
+      <h3>Formulaire d'ajout/édition</h3>
+    </div>
+    <!--end panel header -->
+
+    <!-- body du panel -->
+    <div class="panel-body">
+      <!-- Id de la visite -->
+      <div class="form-group">
+        <label for="id">Id</label>
+        <input id="id" type="text" class="form-control" name="id" [(ngModel)]="visite.id" />
+      </div>
+      <!-- end id -->
+
+      <!-- date de la visite -->
+      <div class="form-group">
+        <label for="date_visite">Date de la visite</label>
+        <input id="date_visite" type="text" class="form-control" name="date_visite" [(ngModel)]="visite.date_visite" />
+      </div>
+      <!-- end date_visite -->
+
+      <!-- horaire de la visite -->
+      <div class="form-group">
+        <label for="horaire_visite">Horaire de la visite</label>
+        <input id="horaire_visite" type="text" class="form-control" name="horaire_visite" [(ngModel)]="visite.horaire_visite" />
+      </div>
+      <!-- end horaire de la visite -->
+
+      <!-- Agent immobilier de la visite -->
+      <div class="form-group">
+        <label for="agent">Agent</label>
+        <input id="agent" type="text" class="form-control" name="agent" [(ngModel)]="visite.agent" />
+      </div>
+      <!-- end agent immobilier -->
+
+
+    </div>
+    <!--end panel body -->
+
+    <div class="panel-footer">
+      <button class="btn btn-danger" type="submit">Save</button>
+    </div>
+    <!--end panel footer -->
+
+
+  </div>
+  <!--end panel -->
+
+
+</form>

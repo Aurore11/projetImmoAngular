@@ -1,6 +1,6 @@
 <!--===============Gestion des propriétaires de biens immobiliers================= -->
 
-<table class="table table-striped">
+<table class="table table-striped"  >
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -21,6 +21,6 @@
     <td><button class="btn btn-primary" (click)="editProprio(proprio.id)">Editer</button></td>
     <td><button class="btn btn-danger" (click)="suppProprio(proprio)">Supprimer</button></td>
   </tbody>
-
-
+  <tfoot><a class="btn btn-success" routerLink="editProprio/0">Create</a></tfoot>
+  
 </table>
