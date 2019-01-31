@@ -2,42 +2,42 @@
 
 
 <!-- agentForm: template reference variable (stocke une référence sur l'ensemble du formulaire) -->
-<form #agentForm="ngForm" (ngSubmit)="seConnecter()">
+<!-- <form #agentForm="ngForm" (ngSubmit)="seConnecter()"> -->
 
-  <div class="panel panel-primary">
+<div class="panel panel-primary">
 
-    <!-- header du panel -->
-    <div class="panel-heading">
-      <h3>Formulaire de connexion</h3>
-    </div>
-    <!--end header -->
-
-    <!-- body du panel -->
-    <div class="panel-body">
-      <!--input pour le username -->
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input id="username" type="text" class="form-control" name="username" [(ngModel)]="agent.username" />
-      </div>
-      <!--end username -->
-      <!--input pour le password -->
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input id="password" type="text" class="form-control" name="password" [(ngModel)]="agent.password" />
-      </div>
-      <!--end password -->
-    </div>
-    <!--end body -->
-
-    <!-- footer du panel -->
-    <div class="panel-footer">
-      <button type="submit" class="btn btn-danger">Se connecter</button>
-    </div>
-    <!--end footer -->
-
-
+  <!-- header du panel -->
+  <div class="panel-heading">
+    <h3>Formulaire de connexion</h3>
   </div>
-  <!--end panel -->
+  <!--end header -->
+
+  <!-- body du panel -->
+  <div class="panel-body">
+    <!--input pour le username -->
+    <div class="form-group">
+      <label for="username">Username</label>
+      <input id="username" type="text" class="form-control" name="username" placeholder="Username" [(ngModel)]="username" />
+    </div>
+    <!--end username -->
+    <!--input pour le password -->
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input id="password" type="text" class="form-control" name="password" placeholder="Password" [(ngModel)]="password" />
+    </div>
+    <!--end password -->
+  </div>
+  <!--end body -->
+
+  <!-- footer du panel -->
+  <div class="panel-footer">
+    <button type="submit" class="btn btn-danger" (click)="seConnecter()">Se connecter</button>
+  </div>
+  <!--end footer -->
 
 
-</form>
+</div>
+<!--end panel -->
+
+
+<!-- </form> -->

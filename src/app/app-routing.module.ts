@@ -6,13 +6,16 @@ import { AddCreateClasseStdComponent } from './composants/add-create-classe-std/
 import { ModeleFormulaireComponent } from './modeleFomulaire/modele-formulaire.component';
 import { ListClientsComponent } from './composants/list-clients/list-clients.component';
 import { AddCreateClientComponent } from './add-create-client/add-create-client/add-create-client.component';
+import { NeedAuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  {path:'list', component: ListProprietaireComponent},
-  {path:'formul', component: ModeleFormulaireComponent},
-  {path:'editProprio/:id', component: AddCreateComponent},
-  {path:'editClasseStd/:id', component: AddCreateClasseStdComponent},
-  {path:'', redirectTo:'/formul', pathMatch:'full'}
+  { path: 'list', component: ListProprietaireComponent, canActivate: [NeedAuthGuard] },
+  { path: 'formul', component: ModeleFormulaireComponent },
+  {path:'listClient', component: ListClientsComponent},
+  {path:'editClient/:id', component: AddCreateClientComponent},
+  { path: 'editProprio/:id', component: AddCreateComponent, canActivate: [NeedAuthGuard] },
+  { path: 'editClasseStd/:id', component: AddCreateClasseStdComponent, canActivate: [NeedAuthGuard] },
+  { path: '', redirectTo: '/formul', pathMatch: 'full' }
 ];
 
 @NgModule({
