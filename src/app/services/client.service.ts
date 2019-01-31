@@ -11,7 +11,7 @@ import { Injectable } from '@angular/core';
 })
 export class ClientService{
   //adresse du web service
-  adresse_web_service = "http://localhost:8080/dev.appli.gestion.immobiliere/clientWs";
+  adresse_web_service = "http://localhost:8080/dev.appli.gestion.immobiliere/clientWs/listeClient";
 
 //injection du service httpClient
 constructor(private httpClient: HttpClient) { }

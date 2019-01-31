@@ -12,7 +12,7 @@ import { Client } from 'src/app/modele/Client';
 })
 export class ListClientsComponent implements OnInit {
   //propriété pour récupérer les données du web service
-  private client = [];
+  private clients = [];
 
   constructor( private clientService : ClientService ,  private router : Router) { }
 
@@ -20,7 +20,7 @@ export class ListClientsComponent implements OnInit {
   //invocation du service pour la récupération des données
   ngOnInit() {
     this.clientService.getAllClient().subscribe(
-      data => this.client = data
+      data => this.clients = data
     );
   }
   /**

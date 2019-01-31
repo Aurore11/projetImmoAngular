@@ -6,6 +6,8 @@
       <th scope="col">Id</th>
       <th scope="col">Nom</th>
       <th scope="col">Adresse</th>
+      <th scope="col">Code postal</th>
+      <th scope="col">Ville</th>
       <th scope="col">Teléphone privé</th>
       <th scope="col">Teléphone travail</th>
       <th scope="col">Edition</th>
@@ -16,8 +18,12 @@
     <td>{{proprio.id}}</td>
     <td>{{proprio.nom}}</td>
     <td>{{proprio.adresse}}</td>
+    <td>{{proprio.codePostal}}</td>
+    <td>{{proprio.localite}}</td>
     <td>{{proprio.telephonePrive}}</td>
     <td>{{proprio.telephoneTravail}}</td>
+
+
     <td><button class="btn btn-primary" (click)="editProprio(proprio.id)">Editer</button></td>
     <td><button class="btn btn-danger" (click)="suppProprio(proprio)">Supprimer</button></td>
   </tbody>

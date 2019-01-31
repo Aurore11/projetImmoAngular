@@ -1,34 +1,31 @@
 <!--===============Gestion Clients================= -->
 
-<table *ngFor = "let client of clients">
-  <tr>
-    <td>Id</td>
-    <td>{{Client.Id}}</td>
-  </tr>
-  <tr>
-    <td>Adresse</td>
-    <td>{{client.Adresse}}</td>
-  </tr>
-  <tr>
-    <td>Nom</td>
-    <td>{{client.Nom}}</td>
-  </tr>
-  <tr>
-    <td>Telephone</td>
-    <td>{{client.Telephone}}</td>
-  </tr>
- 
-  <tr>
+<table class="table table-striped"  >
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nom</th>
+      <th scope="col">Adresse</th>
+      <th scope="col">Code postal</th>
+      <th scope="col">Ville</th>
+      <th scope="col">Teléphone</th>
+      <th scope="col">Liste Biens Immo</th>
+      <th scope="col">Edition</th>
+      <th scope="col">Supression</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let client of clients">
+    <td>{{client.id}}</td>
+    <td>{{client.nom}}</td>
+    <td>{{client.adresse}}</td>
+    <td>{{client.codePostal}}</td>
+    <td>{{client.localite}}</td>
+
     <td><button class="btn btn-primary" (click) ="getAllClasseStd">Classe Standards</button></td>
-  </tr>
-  <tr>
     <td><button class="btn btn-primary" (click) ="editClient(client.id)">Editer</button></td>
-  </tr>
-  <tr>
     <td><button class="btn btn-danger" (click) ="suppClient(client)">Supprimer</button></td>
-  </tr>
-
-
-
+  </tbody>
+  <tfoot><a class="btn btn-success" routerLink="../editClient/0">Ajouter</a></tfoot>
+  
 </table>
 

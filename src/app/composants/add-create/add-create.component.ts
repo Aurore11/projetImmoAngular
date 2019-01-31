@@ -36,6 +36,8 @@ export class AddCreateComponent implements OnInit {
         id : null,
         nom : null,
         adresse :null,
+        codePostal:null,
+        localite:null,
         telephonePrive :null,
         telephoneTravail :null
       }

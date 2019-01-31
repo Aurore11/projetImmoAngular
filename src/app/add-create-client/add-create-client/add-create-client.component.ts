@@ -31,6 +31,8 @@ client:Client
         id: null,
         adresse: null,
         nom: null,
+        codePostal:null,
+        localite:null,
         telephone: null,
         listeClasseStd:null,
         
