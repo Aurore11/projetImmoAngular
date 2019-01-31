@@ -18,6 +18,7 @@ export class ClasseStandardService {
   /**
    * récupération de toutes les classes standards
    */
+  
   getAllClassesStd() : Observable<ClasseStandard[]>{
     return this.httpClient.get<ClasseStandard[]>(this.adresse_web_service);
   }//end getAllClassesStd

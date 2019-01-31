@@ -52,7 +52,7 @@ export class AddCreateContratComponent implements OnInit {
 
   saveContrat() {
 
-    if (this.contrat.refContrat === 0) {
+    if (this.contrat.refContrat === null) {
       //création du contrat
       this.contratService.ajouterContrat(this.contrat).subscribe();
     } else {
