@@ -10,7 +10,7 @@ import { Proprietaire } from '../modele/Proprietaire';
 export class ProprietaireService {
 
   //adresse du web service
-  adresse_web_service ="";
+  adresse_web_service ="http://localhost:8080/dev.appli.gestion.immobiliere/propriotWs/listeProprio";
 
   //injection du service httpClient
   constructor(private httpClient : HttpClient) { }

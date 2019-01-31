@@ -1,6 +1,6 @@
 <!--===============Gestion des propriétaires de biens immobiliers================= -->
 
-<table *ngFor = "let proprio of proprietaires">
+<table class="table table-bordered" *ngFor="let proprio of proprietaires">
   <tr>
     <td>Id</td>
     <td>{{proprio.id}}</td>
@@ -15,17 +15,17 @@
   </tr>
   <tr>
     <td>Téléphone personnel</td>
-    <td>{{proprio.tel_perso}}</td>
+    <td>{{proprio.telephonePrive}}</td>
   </tr>
   <tr>
     <td>Téléphone travail</td>
-    <td>{{proprio.tel_travail}}</td>
+    <td>{{proprio.telephoneTravail}}</td>
   </tr>
   <tr>
-    <td><button class="btn btn-primary" (click) ="editProprio(proprio.id)">Editer</button></td>
+    <td><button class="btn btn-primary" (click)="editProprio(proprio.id)">Editer</button></td>
   </tr>
   <tr>
-    <td><button class="btn btn-danger" (click) ="suppProprio(proprio)">Supprimer</button></td>
+    <td><button class="btn btn-danger" (click)="suppProprio(proprio)">Supprimer</button></td>
   </tr>
 
 
