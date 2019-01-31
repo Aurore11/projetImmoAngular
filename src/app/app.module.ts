@@ -14,10 +14,7 @@ import { ListProprietaireComponent } from './composants/list-proprietaire/list-p
 import { AddCreateComponent } from './composants/add-create/add-create.component';
 import { ListClasseStandardComponent } from './composants/list-classe-standard/list-classe-standard.component';
 import { AddCreateClasseStdComponent } from './composants/add-create-classe-std/add-create-classe-std.component';
-import { ListVisiteComponent } from './composants/list-visite/list-visite.component';
-import { AddCreateVisiteComponent } from './composants/add-create-visite/add-create-visite.component';
-import { ListContratComponent } from './composants/list-contrat/list-contrat.component';
-import { AddCreateContratComponent } from './composants/add-create-contrat/add-create-contrat.component';
+
 
 @NgModule({
   declarations: [
@@ -27,10 +24,6 @@ import { AddCreateContratComponent } from './composants/add-create-contrat/add-c
     AddCreateComponent,
     ListClasseStandardComponent,
     AddCreateClasseStdComponent,
-    ListVisiteComponent,
-    AddCreateVisiteComponent,
-    ListContratComponent,
-    AddCreateContratComponent
   ],
   imports: [
     BrowserModule,
