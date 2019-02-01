@@ -1,0 +1,56 @@
+<!-- ===========gestion des bien ImmobilierAA========= -->
+<table *ngFor="let bienImmoAA of BiAA">
+
+  <tr>
+    <td>Id</td>
+    <td>{{bienImmoAA.id}}</td>
+  </tr>
+  <tr>
+    <td>Mode d'offre</td>
+    <td>{{bienImmoAA.modeOffre}}</td>
+  </tr>
+  <tr>
+    <td>Statut</td>
+    <td>{{bienImmoAA.statut}}</td>
+  </tr>
+  <tr>
+    <td>Date de soumission</td>
+    <td>{{bienImmoAA.dateSoumission}}</td>
+  </tr>
+  <tr>
+    <td>Adresse</td>
+    <td>{{bienImmoAA.adresse}}</td>
+  </tr>
+  <tr>
+    <td>Code postal</td>
+    <td>{{bienImmoAA.codePostal}}</td>
+  </tr>
+  <tr>
+    <td>Localite</td>
+    <td>{{bienImmoAA.localite}}</td>
+  </tr>
+  <tr>
+    <td>Date de disponibilite</td>
+    <td>{{bienImmoAA.dateDisposition}}</td>
+  </tr>
+  <tr>
+    <td>Revenue du Cadastre</td>
+    <td>{{bienImmoAA.revenueCadastral}}</td>
+  </tr>
+  <tr>
+    <td>Etat</td>
+    <td>{{bienImmoAA.etat}}</td>
+  </tr>
+  <tr>
+    <td>Prix d'achat demande</td>
+    <td>{{bienImmoAA.prixAchatDemande}}</td>
+  </tr>
+
+  <tr>
+    <td><button class="btn btn-primary" (click)="editerBiAa(bienImmoAA.id)">Editer</button></td>
+  </tr>
+  <tr>
+    <td><button class="btn btn-danger" (click)="supprimerBiAa(bienImmo)">Supprimer</button></td>
+  </tr>
+
+</table>

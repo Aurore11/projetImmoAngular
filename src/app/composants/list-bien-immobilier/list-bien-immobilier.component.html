@@ -1,0 +1,48 @@
+<!-- ===========gestion des bien Immobilier=========== -->
+<table *ngFor="let bienImmo of BI">
+
+  <tr>
+    <td>Id</td>
+    <td>{{bienImmo.id}}</td>
+  </tr>
+  <tr>
+    <td>Mode d'offre</td>
+    <td>{{bienImmo.modeOffre}}</td>
+  </tr>
+  <tr>
+    <td>Statut</td>
+    <td>{{bienImmo.statut}}</td>
+  </tr>
+  <tr>
+    <td>Date de soumission</td>
+    <td>{{bienImmo.dateSoumission}}</td>
+  </tr>
+  <tr>
+    <td>Adresse</td>
+    <td>{{bienImmo.adresse}}</td>
+  </tr>
+  <tr>
+    <td>Code postal</td>
+    <td>{{bienImmo.codePostal}}</td>
+  </tr>
+  <tr>
+    <td>Localite</td>
+    <td>{{bienImmo.localite}}</td>
+  </tr>
+  <tr>
+    <td>Date de disponibilite</td>
+    <td>{{bienImmo.dateDisposition}}</td>
+  </tr>
+  <tr>
+    <td>Revenue du Cadastre</td>
+    <td>{{bienImmo.revenueCadastral}}</td>
+  </tr>
+
+  <tr>
+    <td><button class="btn btn-primary" (click)="editBI(bienImmo.id)">Editer</button></td>
+  </tr>
+  <tr>
+    <td><button class="btn btn-danger" (click)="supprimerBI(bienImmo)">Supprimer</button></td>
+  </tr>
+
+</table>

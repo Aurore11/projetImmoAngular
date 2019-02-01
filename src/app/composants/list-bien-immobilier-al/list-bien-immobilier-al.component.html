@@ -1,0 +1,67 @@
+<!-- ===========gestion des bien ImmobilierAA========= -->
+<table *ngFor="let bienImmoAl of BiAl">
+
+  <tr>
+    <td>Id</td>
+    <td>{{bienImmoAl.id}}</td>
+  </tr>
+  <tr>
+    <td>Mode d'offre</td>
+    <td>{{bienImmoAl.modeOffre}}</td>
+  </tr>
+  <tr>
+    <td>Statut</td>
+    <td>{{bienImmoAl.statut}}</td>
+  </tr>
+  <tr>
+    <td>Date de soumission</td>
+    <td>{{bienImmoAl.dateSoumission}}</td>
+  </tr>
+  <tr>
+    <td>Adresse</td>
+    <td>{{bienImmoAl.adresse}}</td>
+  </tr>
+  <tr>
+    <td>Code postal</td>
+    <td>{{bienImmoAl.codePostal}}</td>
+  </tr>
+  <tr>
+    <td>Localite</td>
+    <td>{{bienImmoAl.localite}}</td>
+  </tr>
+  <tr>
+    <td>Date de disponibilite</td>
+    <td>{{bienImmoAl.dateDisposition}}</td>
+  </tr>
+  <tr>
+    <td>Revenue du Cadastre</td>
+    <td>{{bienImmoAl.revenueCadastral}}</td>
+  </tr>
+  <tr>
+    <td>Charges mensuelles</td>
+    <td>{{bienImmoAl.chargesMensuelles}}</td>
+  </tr>
+  <tr>
+    <td>Garnitures</td>
+    <td>{{bienImmoAl.garniture}}</td>
+  </tr>
+  <tr>
+    <td>Loyer mensuel</td>
+    <td>{{bienImmoAl.loyerMensuel}}</td>
+  </tr>
+  <tr>
+    <td>Montant de la caution</td>
+    <td>{{bienImmoAl.montantCaution}}</td>
+  </tr>
+  <tr>
+    <td>Type de bail</td>
+    <td>{{bienImmoAl.typeBail}}</td>
+  </tr>
+  <tr>
+    <td><button class="btn btn-primary" (click)="editerBiAl(bienImmoAl.id)">Editer</button></td>
+  </tr>
+  <tr>
+    <td><button class="btn btn-danger" (click)="supprimerBiAl(bienImmoAl)">Supprimer</button></td>
+  </tr>
+
+</table>
