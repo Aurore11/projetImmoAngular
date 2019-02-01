@@ -44,4 +44,9 @@ export class ListContratComponent implements OnInit {
     //redirection (navigation) vers le path editContrat/idContrat => createContratComponent (formulaire)
     this.router.navigate(['/editContrat', idContrat]);
   }
+
+  
+  dirigerAccueil(){
+    this.router.navigateByUrl('/accueil');
+  }
 }

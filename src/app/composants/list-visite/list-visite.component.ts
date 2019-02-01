@@ -41,5 +41,8 @@ export class ListVisiteComponent implements OnInit {
     this.router.navigate(['/editVisite', idVisite]);
   }
 
+  dirigerAccueil(){
+    this.router.navigateByUrl('/accueil');
+  }
 
 }

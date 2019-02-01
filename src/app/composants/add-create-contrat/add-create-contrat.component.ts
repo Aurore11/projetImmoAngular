@@ -8,6 +8,7 @@ import { Router, ActivatedRoute } from '@angular/router';
   templateUrl: './add-create-contrat.component.html',
   styleUrls: ['./add-create-contrat.component.css']
 })
+
 export class AddCreateContratComponent implements OnInit {
 
   //propriété de type Visite liée aux input du formulaire avec la directive ngModel
@@ -52,13 +53,16 @@ export class AddCreateContratComponent implements OnInit {
 
   saveContrat() {
 
-    if (this.contrat.refContrat === null) {
+    if (this.contrat.refContrat === 0) {
       //création du contrat
       this.contratService.ajouterContrat(this.contrat).subscribe();
     } else {
       //edition du contrat
       this.contratService.updateContrat(this.contrat).subscribe();
     }
+
+    //redirection vers la liste des contrats
+    this.router.navigate(['/listContrat']);
 
   }//end saveContrat
 

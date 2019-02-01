@@ -1,29 +1,30 @@
 <!--===============Gestion des visites================= -->
-
-<table *ngFor="let visite of visites">
-  <tr>
-    <td>Id</td>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Date de la visite</th>
+      <th scope="col">Horaire de la visite</th>
+      <th scope="col">Agent immobilier</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let visite of visites">
     <td>{{visite.id}}</td>
-  </tr>
-  <tr>
-    <td>Date de la visite</td>
     <td>{{visite.date_visite}}</td>
-  </tr>
-  <tr>
-    <td>Horaire de la visite</td>
     <td>{{visite.horaire_visite}}</td>
-  </tr>
-  <tr>
-    <td>Agent immobilier</td>
     <td>{{visite.agent}}</td>
-  </tr>
-  <tr>
-    <td><button class="btn btn-primary" (click)="editVisite(visite.id)">Editer</button></td>
-  </tr>
-  <tr>
-    <td><button class="btn btn-danger" (click)="suppVisite(visite)">Supprimer</button></td>
-  </tr>
 
+    <tr>
+      <td><button class="btn btn-primary" (click)="editVisite(visite.id)">Editer</button></td>
+    </tr>
+    <tr>
+      <td><button class="btn btn-danger" (click)="suppVisite(visite)">Supprimer</button></td>
+    </tr>
+  <tfoot><a class="btn btn-success" routerLink="../editVisite/0">Ajouter</a></tfoot>
+
+  
 
 
 </table>
+
+<button class="btn-primary" (click)="dirigerAccueil()">Retour au menu</button>

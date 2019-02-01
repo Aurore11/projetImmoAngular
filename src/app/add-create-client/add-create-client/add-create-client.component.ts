@@ -9,7 +9,7 @@ import { ClientService } from 'src/app/services/client.service';
   styleUrls: ['./add-create-client.component.css']
 })
 export class AddCreateClientComponent implements OnInit {
-client:Client
+client:Client;
   constructor(private clientService: ClientService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -19,7 +19,7 @@ client:Client
         const idClientId = +parameterMap.get('id');
 
         //méthode pour récupérer la classe standard en fonction de l'id
-        this.getClientById;
+        this.getClientById(idClientId);
       }
     );
   }
@@ -33,8 +33,8 @@ client:Client
         nom: null,
         codePostal:null,
         localite:null,
-        telephone: null,
-        listeClasseStd:null,
+        telephonePrive: null,
+        listeClasseStd:null
         
       }
 
@@ -60,6 +60,9 @@ client:Client
       //edition d'un client
       this.clientService.updateClientStd(this.client).subscribe();
     }
+
+    //redirection vers la liste des clients
+    this.router.navigate(['listClient']);
 
   }//end saveProprio
 

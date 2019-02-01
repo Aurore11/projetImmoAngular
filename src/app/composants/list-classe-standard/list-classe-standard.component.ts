@@ -50,7 +50,10 @@ export class ListClasseStandardComponent implements OnInit {
   }//end getAllBiensImmo
 
 
-
+  
+  dirigerAccueil(){
+    this.router.navigateByUrl('/accueil');
+  }
 
 
 }

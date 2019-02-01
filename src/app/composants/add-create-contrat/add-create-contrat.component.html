@@ -11,42 +11,25 @@
 
     <!-- body du panel -->
     <div class="panel-body">
-      <!-- code -->
+      <!-- Reference contrat -->
       <div class="form-group">
         <label for="refContrat">Reference contrat</label>
         <input id="contrat" type="text" class="form-control" name="contrat" [(ngModel)]="contrat.refContrat" />
       </div>
+
+      <!-- Client-->
+      <div class="form-group">
+        <label for="client">Client</label>
+        <input id="client" type="text" class="form-control" name="client" [(ngModel)]="contrat.client" />
+      </div>
+
+      <!-- Bien immobilier-->
+      <div class="form-group">
+        <label for="bienImmo">Bien immobilier</label>
+        <input id="bienImmo" type="text" class="form-control" name="bienImmo" [(ngModel)]="contrat.bienImmo" />
+      </div>
+
       <!-- end code -->
-
-      <!-- mode offre -->
-      <!-- radio bouton pour le mode d'offre -->
-      <div class="form-group">
-        <label>Mode d'offre</label>
-        <div>
-          <label class="radio-inline">
-            <input type="radio" value="ALouer" name="mode" [(ngModel)]="classeStd.modeOffre" /> A acheter
-          </label>
-          <label class="radio-inline">
-            <input type="radio" value="AVendre" name="mode" [(ngModel)]="classeStd.modeOffre" /> A louer
-          </label>
-        </div>
-        <!-- end div choix -->
-      </div><!-- end mode offre -->
-
-      <!-- prix max -->
-      <div class="form-group">
-        <label for="prixMax">Prix maximum</label>
-        <input id="prixMax" type="text" class="form-control" name="prixMaxi" [(ngModel)]="classeStd.prixMax" />
-      </div>
-      <!-- end prix max -->
-
-      <!-- superficie min -->
-      <div class="form-group">
-        <label for="superficieMin">Superficie minimum</label>
-        <input id="superficieMin" type="text" class="form-control" name="superficieMini" [(ngModel)]="classeStd.superficieMin" />
-      </div>
-      <!-- end superficie min -->
-
 
     </div>
     <!--end panel body -->

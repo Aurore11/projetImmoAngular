@@ -60,6 +60,9 @@ export class AddCreateVisiteComponent implements OnInit {
       this.visiteService.updateVisite(this.visite).subscribe();
     }
 
+    //redirection vers la liste des visites
+    this.router.navigate(['/listVisite']);
+
   }//end saveVisite
 
 }

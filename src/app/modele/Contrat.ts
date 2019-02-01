@@ -3,7 +3,7 @@ import { Client } from './client';
 import { BienImmobilier } from './BienImmobilier';
 
 export class Contrat {
-    refContrat: string;
+    refContrat: number;
     client: Client;
     bienImmo: BienImmobilier;
     agent: Agent;

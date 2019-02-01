@@ -37,7 +37,7 @@ export class ModeleFormulaireComponent {
           r => {
             if (r.token) {
               this.customer.setToken(r.token);
-              this.router.navigateByUrl('/list');
+              this.router.navigateByUrl('/accueil');
             }
           },
           r => {

@@ -7,6 +7,6 @@ export class Client {
     adresse:string;
     codePostal:string;
     localite:string;
-    telephone:string;
+    telephonePrive:string;
     listeClasseStd:[ClasseStandard];
 }

@@ -22,6 +22,7 @@ import { ListVisiteComponent } from './composants/list-visite/list-visite.compon
 import { AddCreateVisiteComponent } from './composants/add-create-visite/add-create-visite.component';
 import { ListContratComponent } from './composants/list-contrat/list-contrat.component';
 import { AddCreateContratComponent } from './composants/add-create-contrat/add-create-contrat.component';
+import {AccueilComponent} from './composants/accueil/accueil.component';
 import { NeedAuthGuard } from './services/auth.guard';
 
 
@@ -37,6 +38,7 @@ import { NeedAuthGuard } from './services/auth.guard';
     ListClientsComponent,
     AddCreateClientComponent,
 
+    AccueilComponent,
     ListVisiteComponent,
     AddCreateVisiteComponent,
     ListContratComponent,

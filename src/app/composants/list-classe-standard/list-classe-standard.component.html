@@ -1,40 +1,30 @@
 <!--===============Gestion des classes standard================= -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Code</th>
+      <th scope="col">Type</th>
+      <th scope="col">Mode d'offre</th>
+      <th scope="col">Prix maximum</th>
+      <th scope="col">Superficie minimum</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let classeStd of classesStandards">
+    <td>{{classeStd.id}}</td>
+    <td>{{classeStd.Code}}</td>
+    <td>{{classeStd.Type}}</td>
+    <td>{{classeStd.modeOffre}}</td>
+    <td>{{classeStd.prixMax}}</td>
+    <td>{{classeStd.superficieMin}}</td>
 
-<table *ngFor = "let classeStd of classesStandards">
     <tr>
-      <td>Id</td>
-      <td>{{classeStd.id}}</td>
+      <td><button class="btn btn-primary" (click)="editClasseStd(classeStd.id)">Editer</button></td>
     </tr>
     <tr>
-      <td>Code</td>
-      <td>{{classeStd.code}}</td>
+      <td><button class="btn btn-danger" (click)="suppClasseStd(classeStd)">Supprimer</button></td>
     </tr>
-    <tr>
-      <td>Type</td>
-      <td>{{classeStd.type}}</td>
-    </tr>
-    <tr>
-      <td>Mode offre</td>
-      <td>{{classeStd.modeOffre}}</td>
-    </tr>
-    <tr>
-      <td>Prix max</td>
-      <td>{{classeStd.prixMax}}</td>
-    </tr>
-    <tr>
-      <td>Superficie minimum</td>
-      <td>{{classeStd.superficieMin}}</td>
-    </tr>
-    <tr>
-      <td><button class="btn btn-primary" (click) ="getAllBiensImmo()">Biens Immobilier</button></td>
-    </tr>
-    <tr>
-      <td><button class="btn btn-primary" (click) ="editClasseStd(classeStd.id)">Editer</button></td>
-    </tr>
-    <tr>
-      <td><button class="btn btn-danger" (click) ="suppClasseStd(classeStd)">Supprimer</button></td>
-    </tr>
-  
-  
-  
-  </table>
+  <tfoot><a class="btn btn-success" routerLink="../editClasseStd/0">Ajouter</a></tfoot>
+</table>
+
+<button class="btn-primary" (click)="dirigerAccueil()">Retour au menu</button>

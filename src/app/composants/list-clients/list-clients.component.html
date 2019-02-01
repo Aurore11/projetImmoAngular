@@ -1,6 +1,6 @@
 <!--===============Gestion Clients================= -->
 
-<table class="table table-striped"  >
+<table class="table"  >
   <thead>
     <tr>
       <th scope="col">Id</th>
@@ -9,9 +9,8 @@
       <th scope="col">Code postal</th>
       <th scope="col">Ville</th>
       <th scope="col">Teléphone</th>
-      <th scope="col">Liste Biens Immo</th>
       <th scope="col">Edition</th>
-      <th scope="col">Supression</th>
+      <th scope="col">Suppression</th>
     </tr>
   </thead>
   <tbody *ngFor="let client of clients">
@@ -20,8 +19,8 @@
     <td>{{client.adresse}}</td>
     <td>{{client.codePostal}}</td>
     <td>{{client.localite}}</td>
+    <td>{{client.telephonePrive}}</td>
 
-    <td><button class="btn btn-primary" (click) ="getAllClasseStd">Classe Standards</button></td>
     <td><button class="btn btn-primary" (click) ="editClient(client.id)">Editer</button></td>
     <td><button class="btn btn-danger" (click) ="suppClient(client)">Supprimer</button></td>
   </tbody>
@@ -29,3 +28,4 @@
   
 </table>
 
+<button class="btn-primary" (click)="dirigerAccueil()">Retour au menu</button>

@@ -59,5 +59,7 @@ export class ListProprietaireComponent implements OnInit {
     this.router.navigate(['/editProprio', idProprio]);
   }
 
-
+  dirigerAccueil(){
+    this.router.navigateByUrl('/accueil');
+  }
 }
